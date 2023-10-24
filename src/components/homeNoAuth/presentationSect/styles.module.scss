@@ -1,0 +1,104 @@
+@import '@/styles/colors.module.scss';
+
+.sect {
+    width: 80%;
+    margin: auto;
+    min-height: 95vh;
+}
+.conteiner {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 80vh;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+.presentImg {
+    width: 550px;
+}
+.subTitle {
+    font-size: 18px;
+    font-weight: bold;
+    color: $lightRed;
+}
+.title {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 40px;
+}
+.descrip {
+    font-size: 20px;
+    color: $lightGray;
+    margin: 0px 0px 20px 0px;
+}
+.link { text-decoration: none;}
+.navBtn {
+    background-color: transparent;
+    font-size: 17px;
+    font-weight: bold;
+    color: $lightGray;
+    padding: 10px;
+    border: 1px solid $lightRed;
+    border-radius: 8px;
+    
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    transition: 300ms ease-in-out;
+    .btnImg {
+        width: 11px;
+    }
+    &:hover {
+        box-shadow: 2px 2px 2px $darkRed;
+        text-shadow: 1px 1px 10px #ff004457;
+    }
+}
+.content2 {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+.arrowDown {
+    margin: auto;
+    width: 30px;
+}
+@media (max-width: 1400px){
+    .title { font-size: 30px;}
+    .descrip { font-size: 15px;}
+    .presentImg { width: 450px;}
+}
+@media (max-height:620px) and (min-width:1150px) {
+    .title { font-size: 30px;}
+    .descrip { font-size: 15px;}
+    .presentImg { width: 450px;}
+}
+@media (max-width: 1150px) {
+    .conteiner {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .sect {
+        padding-top: 30px;
+    }
+    .content {
+        align-items: center;
+        text-align: center;
+    }
+}
+@media (max-width: 560px) {
+    .presentImg { width: 90%;}
+    .title { 
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .subTitle { font-size: 15px; }
+    .descrip { font-size: 12px;}
+    .navBtn {
+        font-size: 15px;
+        padding: 8px;
+    }
+}

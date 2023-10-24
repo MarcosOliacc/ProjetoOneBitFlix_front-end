@@ -15,7 +15,6 @@ const HeaderNoAuth = ()=> {
                 <div className={styles.divBnts}>
                     <Link href='/login'><button className={styles.navBtn}>Entrar</button></Link>
                     <Link href='/register'><button className={styles.navBtn}>Quero fazer parte</button></Link>
-                    
                 </div>
             </section>
         </>

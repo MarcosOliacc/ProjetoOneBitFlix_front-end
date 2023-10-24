@@ -1,4 +1,4 @@
-@import '../../../styles/colors.module.scss';
+@import '@/styles/colors.module.scss';
 
 .ctaSection {
     background-color: $lightRed;
@@ -19,9 +19,10 @@
     border: 1px solid rgba(211, 211, 211, 0.281);
     color: $lightGray;
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 7px;
     margin: 0px 5px;
-    transition: 200ms ease-in-out;
+    transition:border-color 300ms ease-in-out;
+    
     &:hover {
         border-color: $lightRed;
         box-shadow: 1.5px 1.5px 2px $lightRed;
@@ -49,7 +50,7 @@
     .nav {
         justify-content: center;
         flex-flow: column;
-        gap: 50px;
+        gap: 25px;
     }
     .navBtn {
         margin: 0px 10px;
@@ -63,6 +64,10 @@
 @media (max-width: 310px) {
     .divBnts {
         flex-direction: column;
-        gap: 30px;
+        gap: 20px;
+    }
+    .navBtn {
+        font-size: 15px;
+        padding: 8px;
     }
 }
