@@ -1,0 +1,68 @@
+@import '../../../styles/colors.module.scss';
+
+.ctaSection {
+    background-color: $lightRed;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0px;
+    gap: 30px;
+}
+.imgCta {
+    width: 20px;
+    margin: 0px 10px;
+}
+.navBtn {
+    font-size: 18px;
+    background-color: transparent;
+    border: 1px solid rgba(211, 211, 211, 0.281);
+    color: $lightGray;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 0px 5px;
+    transition: 200ms ease-in-out;
+    &:hover {
+        border-color: $lightRed;
+        box-shadow: 1.5px 1.5px 2px $lightRed;
+        color: #fff;
+    }
+}
+.nav {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.imgNav {
+    width: 180px;
+
+}
+.divBnts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 560px) {
+    .nav {
+        justify-content: center;
+        flex-flow: column;
+        gap: 50px;
+    }
+    .navBtn {
+        margin: 0px 10px;
+        font-size: 15px;
+    }
+    .ctaSection {
+        gap: 10px;
+
+    }
+}
+@media (max-width: 310px) {
+    .divBnts {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
