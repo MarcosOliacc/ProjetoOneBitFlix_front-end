@@ -1,4 +1,5 @@
 import { CourseType } from '@/services/courseService';
+// @ts-ignore
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import "@splidejs/splide/dist/css/splide.min.css";
 import SlideCard from '../slideCard';
@@ -10,7 +11,8 @@ interface props {
 const SlideComponent = function ({courses}: props) {
   return <>
     <div>
-        <Splide options={{
+        <Splide
+         options={{
             type:'loop',
             perPage: 4,
             perMove: 1,

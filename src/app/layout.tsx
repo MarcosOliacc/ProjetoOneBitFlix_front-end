@@ -7,8 +7,10 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'OneBitFlix',
-  description: 'Uma plataforma streaming de cursos de programação'
+  description: 'Uma plataforma streaming de cursos de programação',
+  icons:'/favicon.svg'
 }
+
 
 export default function RootLayout({
   children,

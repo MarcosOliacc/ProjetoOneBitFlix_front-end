@@ -1,4 +1,3 @@
-import { StringifyOptions } from "querystring";
 import api from "./api";
 
 export type EpisodeType = {
