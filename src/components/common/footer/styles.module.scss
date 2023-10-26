@@ -1,0 +1,65 @@
+@import '@/styles/colors.module.scss';
+
+
+
+.sect {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    padding: 26px 0px;
+    justify-content: space-between;
+}
+.oneBit {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.footerImg {
+    width: 250px;
+}
+.footerLink {
+    text-decoration: none;
+    color: $lightRed;
+    transition: color 300ms;
+    &:hover {
+        color: $mediumGray;
+        text-decoration: underline;
+    }
+}
+.dev {
+    display: grid;
+    gap: 10px;
+}
+.social {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 0px;
+}
+.content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.socialImg {
+    width: 30px;
+}
+.socialLink {
+    text-decoration: none;
+    color: $darkRed;
+    transition: color 300ms;
+    &:hover {
+        color: $mediumGray;
+        text-decoration: underline;
+    }
+}
+@media (max-width: 690px) {
+    .sect {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .oneBit {
+        padding-bottom: 20px;
+    }
+}

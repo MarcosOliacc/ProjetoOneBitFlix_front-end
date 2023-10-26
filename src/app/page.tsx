@@ -5,6 +5,7 @@ import CardSect from '@/components/homeNoAuth/cardSect'
 import SlideSect from '@/components/homeNoAuth/slideSection'
 
 import courseService from '@/services/courseService'
+import Footer from '@/components/common/footer'
 
 
 async function HomeNoAuth() {
@@ -19,7 +20,7 @@ async function HomeNoAuth() {
         </div>
         <CardSect/>
         <SlideSect newestCourses={courses}/>
-        
+        <Footer/>
       </main>
     </>
   )
