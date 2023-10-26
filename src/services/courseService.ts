@@ -1,5 +1,4 @@
 import api from "./api";
-
 export type EpisodeType = {
     id: number
     name: string
@@ -13,7 +12,7 @@ export type CourseType = {
     id: number
     name: string
     thumbnailUrl: string
-    synopsys: string
+    synopsis: string
     episodes?: EpisodeType[]
 }
 
@@ -23,7 +22,7 @@ const courseService = {
             console.log(error.response.data.message)
             return error.responde
         })
-        return res
+        return res.data
     }
 }
 

@@ -4,7 +4,12 @@ import PresentationSect from '@/components/homeNoAuth/presentationSect'
 import CardSect from '@/components/homeNoAuth/cardSect'
 import SlideSect from '@/components/homeNoAuth/slideSection'
 
-function HomeNoAuth() {
+import courseService from '@/services/courseService'
+
+
+async function HomeNoAuth() {
+  const courses = await courseService.getNewest()
+
   return(
     <>
       <main>
@@ -13,7 +18,7 @@ function HomeNoAuth() {
           <PresentationSect/>
         </div>
         <CardSect/>
-        <SlideSect/>
+        <SlideSect newestCourses={courses}/>
         
       </main>
     </>

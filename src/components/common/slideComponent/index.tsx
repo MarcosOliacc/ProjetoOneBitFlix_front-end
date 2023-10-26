@@ -1,8 +1,10 @@
-import { CourseType } from '@/services/courseService';
+"use client"
 // @ts-ignore
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import "@splidejs/splide/dist/css/splide.min.css";
 import SlideCard from '../slideCard';
+import { CourseType } from '@/services/courseService';
+import styles from './styles.module.scss'
 
 interface props {
     courses: CourseType[]
@@ -10,12 +12,13 @@ interface props {
 
 const SlideComponent = function ({courses}: props) {
   return <>
-    <div>
+    <div className={styles.content}>
         <Splide
          options={{
             type:'loop',
             perPage: 4,
             perMove: 1,
+            width: 1200,
             pagination: false
         }}>
             {courses?.map((course)=>(
