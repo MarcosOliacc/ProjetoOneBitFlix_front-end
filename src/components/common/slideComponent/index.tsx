@@ -11,15 +11,49 @@ interface props {
 }
 
 const SlideComponent = function ({courses}: props) {
+    let slideCount = 0
+    if (courses.length >= 4) {
+        slideCount = 4
+    } else if(courses) {
+        slideCount = courses.length
+    }
   return <>
     <div className={styles.content}>
         <Splide
          options={{
             type:'loop',
-            perPage: 4,
+            perPage: slideCount,
             perMove: 1,
-            width: 1200,
-            pagination: false
+            width: slideCount * 300,
+            pagination: false,
+            arrows: courses.length > 4 ? true: false,
+            drag: courses.length > 4 ? true: false,
+            breakpoints: {
+                1270: {
+                    perPage: slideCount >= 3 ? 3 : 2,
+                    width:slideCount >= 3 ? 900 : 600,
+                    arrows: courses.length > 3 ? true: false,
+                    drag: courses.length > 3 ? true: false,
+                },
+                990: {
+                    perPage: slideCount >= 2 ? 2 : 1,
+                    width: slideCount >= 3 ? 600 : 300,
+                    arrows: courses.length > 2 ? true: false,
+                    drag: courses.length > 2 ? true: false,
+                },
+                670: {
+                    perPage: 1,
+                    width: 300,
+                    arrows: courses.length > 1 ? true: false,
+                    drag: courses.length > 1 ? true: false,
+                    autoplay: {
+                        interval: 3000
+                    }
+                },
+                365: {
+                    width: 250
+                }
+            }
         }}>
             {courses?.map((course)=>(
                 <SplideSlide key = {course.id}>

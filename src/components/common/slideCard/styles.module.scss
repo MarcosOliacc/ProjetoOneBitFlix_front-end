@@ -5,7 +5,7 @@
     border: 1px solid $darkGray;
     cursor: pointer;
     padding: 8px;
-    margin-left: 12px;
+    margin-left: 10px;
 
     transition: 200ms;
     &:hover {
@@ -25,4 +25,16 @@
     font-size: 14px;
     padding: 8px 16px;
     color: #ccc8c8;
+}
+@media (max-width: 1270px) {
+    .slide {
+        margin-left: 10px;
+    }
+}
+@media (max-width: 365px) {
+    .slide {
+        width: 100%;
+        margin-left: 0;
+        padding: 8px 0px;
+    }
 }
