@@ -58,6 +58,15 @@
 .formBtn {
     border-color: $lightRed;
 }
+.toast {
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 8px;
+    border-radius: 5px;
+}
 
 @media (max-width: 1050px) {
     .sect {

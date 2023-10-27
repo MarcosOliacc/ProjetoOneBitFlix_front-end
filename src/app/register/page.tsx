@@ -2,6 +2,7 @@ import Footer from '@/components/common/footer'
 import HeaderGeneric from '@/components/common/headerGeneric'
 import styles from '@/styles/register.module.scss'
 import RegisterForm from '@/components/registerForm'
+import ToastComponent from '@/components/common/toast'
 
 
 function Register() {
