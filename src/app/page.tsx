@@ -7,7 +7,6 @@ import SlideSect from '@/components/homeNoAuth/slideSection'
 import courseService from '@/services/courseService'
 import Footer from '@/components/common/footer'
 
-
 async function HomeNoAuth() {
   const courses = await courseService.getNewest()
 

@@ -1,4 +1,4 @@
-@import '@/styles/colors.module.scss';
+@import '@/styles/variables.module.scss';
 
 .ctaSection {
     background-color: $lightRed;
@@ -14,15 +14,8 @@
     margin: 0px 10px;
 }
 .navBtn {
-    font-size: 18px;
-    background-color: transparent;
-    border: 1px solid rgba(211, 211, 211, 0.281);
-    color: $lightGray;
-    padding: 10px;
-    border-radius: 7px;
-    margin: 0px 5px;
-    transition:border-color 300ms ease-in-out;
     
+    margin: 0px 5px;
     &:hover {
         border-color: $lightRed;
         box-shadow: 1.5px 1.5px 2px $lightRed;

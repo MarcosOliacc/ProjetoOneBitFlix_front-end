@@ -1,4 +1,4 @@
-@import '@/styles/colors.module.scss';
+@import '@/styles/variables.module.scss';
 
 .sect {
     width: 80%;
@@ -37,15 +37,9 @@
 }
 .link { text-decoration: none;}
 .navBtn {
-    background-color: transparent;
-    font-size: 17px;
     font-weight: bold;
-    color: $lightGray;
-    padding: 10px;
-    border: 1px solid $lightRed;
-    border-radius: 8px;
-    
     display: flex;
+    border-color: $lightRed;
     align-items: center;
     gap: 25px;
     transition: 300ms ease-in-out;

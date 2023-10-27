@@ -1,0 +1,32 @@
+@import '@/styles/variables.module.scss';
+
+.header {
+    background-color: #000;
+}
+.sect {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px 0px;
+
+    width: 80%;
+    margin: auto;
+}
+.headerBtn {
+    &:hover {
+        border-color: $lightRed;
+    }
+}
+.headerImg {
+    width: 180px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .headerBtn {
+        font-size: 12px;
+    }
+    .headerImg {
+        width: 120px;
+    }
+}
