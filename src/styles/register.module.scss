@@ -1,1 +1,108 @@
-@import './variables.module.scss'
+@import './variables.module.scss';
+
+.main {
+    background: linear-gradient(to bottom, #151515, #000);
+}
+.sect {
+    width: 60%;
+    margin: auto;
+    padding: 20px 0px;
+}
+.head {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 60px;
+}
+.formContent {
+    border:1px solid $darkGray;
+    padding: 30px 70px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.groupContent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    padding: 0px 20px;
+}
+.input {
+    background-color: transparent;
+    padding-left: 5px;
+    width: 100%;
+    height: 30px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border: 1px solid $darkGray;
+    border-radius: 5px;
+    &::placeholder {
+        color: $mediumGray;
+    }
+}
+.inputName {
+    @extend .input;
+    text-transform: uppercase;
+    &::placeholder {
+        text-transform: none;
+    }
+}
+.formBtn {
+    border-color: $lightRed;
+}
+
+@media (max-width: 1050px) {
+    .sect {
+        width: 80%;
+    }
+}
+@media (max-width: 800px) {
+    .formContent {
+        padding: 20px 30px;
+    }
+    .headTitle {
+        font-size: 18px;
+    }
+    .groupContent {
+        flex-direction: column;
+        gap: 20px;
+    }   
+}
+@media (max-width: 620px) {
+    .head {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .formContent {
+        padding: 20px 20px;
+    }
+    .input {
+        font-size: 14px;
+    }
+    .formBtn {
+        font-size: 14px;
+    }
+}
+@media (max-width: 400px) {
+    .sect {
+        width: 90%;
+    }
+    .headTitle {
+        font-size: 15px;
+    }
+    .formContent {
+        padding: 20px 10px;
+    }
+    .input {
+        font-size: 12px;
+    }
+}

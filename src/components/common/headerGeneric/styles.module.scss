@@ -6,6 +6,7 @@
 .sect {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
     padding: 20px 0px;
 
@@ -28,5 +29,16 @@
     }
     .headerImg {
         width: 120px;
+    }
+}
+@media (max-width: 320px) {
+    .headerBtn {
+        font-size: 8px;
+    }
+    .headerImg {
+        width: 90px;
+    }
+    .sect {
+        padding: 10px 0px;
     }
 }
