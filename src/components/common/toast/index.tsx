@@ -10,7 +10,7 @@ interface props {
 const ToastComponent = ({isOpen,message,color}: props)=> {
     return(
         <>
-            <Toast id={`${color}`} className={styles.toast} isOpen={isOpen}>
+            <Toast id={color} className={styles.toast} isOpen={(isOpen)}>
                 <ToastBody className="text-center">{message}</ToastBody>
             </Toast>
         </>

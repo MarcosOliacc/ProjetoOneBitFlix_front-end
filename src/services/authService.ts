@@ -8,6 +8,10 @@ interface RegisterParams {
     email: string
     password: string
 }
+interface LoginParams {
+    email: string
+    password: string
+}
 
 const authService = {
     register: async (params: RegisterParams) => {
@@ -18,6 +22,19 @@ const authService = {
             return error
         })
         return res
+    },
+    login: async (params: LoginParams)=> {
+        const res = await api.post('auth/login', params).catch((error)=>{
+            if(error.response === 400 || error.response === 401) {
+                return error.response
+            }
+            return error
+        })
+        if(res.status === 200) {
+            sessionStorage.setItem("onebit-Token", res.data.token)
+        }
+        return res
     }
+
 }
 export default authService
