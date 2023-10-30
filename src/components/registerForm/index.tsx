@@ -9,6 +9,7 @@ function RegisterForm() {
     const router = useRouter()
     const [toastOpen, setToastOpen] = useState(false)
     const [toastMsg, setToastMsg] = useState("")
+    const [color, setColor] = useState('')
     async function createUser(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
         const formData = new FormData(event.currentTarget)
@@ -23,6 +24,7 @@ function RegisterForm() {
     
         if(password!== confPassword) {
             setToastOpen(true)
+            setColor('false')
             setTimeout(()=>{setToastOpen(false)}, 3000)
             setToastMsg('As senhas estão diferentes')
             return 
@@ -33,6 +35,7 @@ function RegisterForm() {
             router.push('/login?registred=true')
         } else {
             setToastOpen(true)
+            setColor('false')
             setTimeout(()=>{setToastOpen(false)}, 3000)
             setToastMsg('Email já cadastrado')
         }
@@ -40,7 +43,7 @@ function RegisterForm() {
 
     return(
         <>
-            <ToastComponent color={false} isOpen={toastOpen} message={toastMsg}/>
+            <ToastComponent color={color} isOpen={toastOpen} message={toastMsg}/>
             <form className={styles.formContent} onSubmit={createUser}>
                 
                 <div className={styles.groupContent}>

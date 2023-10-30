@@ -4,7 +4,7 @@ import styles from '@/styles/register.module.scss'
 interface props {
     isOpen: boolean
     message: string
-    color: boolean
+    color: string
 }
 
 const ToastComponent = ({isOpen,message,color}: props)=> {
