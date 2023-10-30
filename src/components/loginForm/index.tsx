@@ -9,9 +9,16 @@ function LoginForm() {
     const searchParams = useSearchParams()
     const router = useRouter()
     const [toastOpen, setToastOpen] = useState(false)
-    const [toastMsg, setToastMsg] = useState("")
+    const [toastMsg, setToastMsg] = useState('')
     const [color, setColor] = useState('')
     const registerSuccess = searchParams.get('registred')
+
+    useEffect(()=> {
+        if(sessionStorage.getItem('onebit-token')) {
+            router.push('/home')
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
 
     useEffect(()=> {
         if(registerSuccess==='true') {
@@ -28,10 +35,8 @@ function LoginForm() {
         const email = formData.get('email')!.toString()
         const password = formData.get('password')!.toString()
         const params = { email, password}
-        console.log('alooooo')
         const {status} = await authService.login(params)
         if(status === 200) {
-            console.log('era pra ter ido')
             router.push('/home')
         } else {
             setToastOpen(true)

@@ -31,7 +31,7 @@ const authService = {
             return error
         })
         if(res.status === 200) {
-            sessionStorage.setItem("onebit-Token", res.data.token)
+            sessionStorage.setItem("onebit-token", res.data.token)
         }
         return res
     }
