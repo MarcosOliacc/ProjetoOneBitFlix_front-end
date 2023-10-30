@@ -1,4 +1,5 @@
 import HeaderAuth from "@/components/common/headerAuth"
+import { FeaturedSection } from "@/components/homeAuth/featuredSection"
 
 
 const HomeAuth = () => {
@@ -6,6 +7,7 @@ const HomeAuth = () => {
         <>
             <main>
                 <HeaderAuth/>
+                <FeaturedSection/>
             </main>
         </>
     )

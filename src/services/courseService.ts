@@ -23,6 +23,17 @@ const courseService = {
             return error.responde
         })
         return res.data
+    },
+    getFeatured: async (token:string) => {
+        const res = await api.get('/courses/featured', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).catch((error)=>{
+            console.log(error.response.data.message)
+            return error.responde
+        })
+        return res
     }
 }
 
