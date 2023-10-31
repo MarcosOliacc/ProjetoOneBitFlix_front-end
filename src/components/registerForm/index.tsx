@@ -7,9 +7,8 @@ import ToastComponent from "../common/toast"
 
 function RegisterForm() {
     const router = useRouter()
-    const [toastOpen, setToastOpen] = useState(false)
-    const [toastMsg, setToastMsg] = useState("")
-    const [color, setColor] = useState('')
+    const [toastMsg, setToastMsg] = useState("o")
+    const [color, setColor] = useState('desable')
     async function createUser(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
         const formData = new FormData(event.currentTarget)
@@ -23,9 +22,8 @@ function RegisterForm() {
         const params = {firstName, lastName, phone, birth, email, password }    
     
         if(password!== confPassword) {
-            setToastOpen(true)
-            setColor('false')
-            setTimeout(()=>{setToastOpen(false)}, 3000)
+            setColor('falseAct')
+            setTimeout(()=>{setColor('desable')}, 3000)
             setToastMsg('As senhas estão diferentes')
             return 
         }
@@ -34,16 +32,15 @@ function RegisterForm() {
         if(status === 201) {
             router.push('/login?registred=true')
         } else {
-            setToastOpen(true)
-            setColor('false')
-            setTimeout(()=>{setToastOpen(false)}, 3000)
+            setColor('falseAct')
+            setTimeout(()=>{setColor('desable')}, 3000)
             setToastMsg('Email já cadastrado')
         }
     }
 
     return(
         <>
-            <ToastComponent color={color} isOpen={toastOpen} message={toastMsg}/>
+            <ToastComponent color={color} message={toastMsg}/>
             <form className={styles.formContent} onSubmit={createUser}>
                 
                 <div className={styles.groupContent}>

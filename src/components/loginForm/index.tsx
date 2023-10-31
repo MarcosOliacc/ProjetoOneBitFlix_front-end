@@ -8,9 +8,8 @@ import ToastComponent from "../common/toast"
 function LoginForm() {
     const searchParams = useSearchParams()
     const router = useRouter()
-    const [toastOpen, setToastOpen] = useState(false)
-    const [toastMsg, setToastMsg] = useState('')
-    const [color, setColor] = useState('')
+    const [toastMsg, setToastMsg] = useState('o')
+    const [color, setColor] = useState('desable')
     const registerSuccess = searchParams.get('registred')
 
     useEffect(()=> {
@@ -22,9 +21,8 @@ function LoginForm() {
 
     useEffect(()=> {
         if(registerSuccess==='true') {
-            setToastOpen(true)
-            setColor('true')
-            setTimeout(()=>{setToastOpen(false)}, 3000)
+            setColor('trueAct')
+            setTimeout(()=>{setColor('desable')}, 3000)
             setToastMsg('Cadastrado com sucesso!')
         }
     }, [registerSuccess])
@@ -39,9 +37,8 @@ function LoginForm() {
         if(status === 200) {
             router.push('/home')
         } else {
-            setToastOpen(true)
-            setColor('false')
-            setTimeout(()=>{setToastOpen(false)}, 3000)
+            setColor('falseAct')
+            setTimeout(()=>{setColor('desable')}, 3000)
             setToastMsg('Email ou senha incorretos!')
         }
 
@@ -49,7 +46,7 @@ function LoginForm() {
 
     return(
         <>
-            <ToastComponent color={color} isOpen={toastOpen} message={toastMsg}/>
+            <ToastComponent color={color} message={toastMsg}/>
             <form className={styles.formContent2} onSubmit={loginUser}>
                 <div className={styles.group}>
                         <label htmlFor="email">E-mail</label>

@@ -1,18 +1,16 @@
-import { Toast, ToastBody } from "reactstrap"
 import './toast.scss'
 import styles from '@/styles/register.module.scss'
 interface props {
-    isOpen: boolean
     message: string
     color: string
 }
 
-const ToastComponent = ({isOpen,message,color}: props)=> {
+const ToastComponent = ({message,color}: props)=> {
     return(
         <>
-            <Toast id={color} className={styles.toast} isOpen={(isOpen)}>
-                <ToastBody className="text-center">{message}</ToastBody>
-            </Toast>
+            <div id={color} className={styles.toast} >
+                <p className={styles.toastP}>{message}</p>
+            </div>
         </>
     )
 }

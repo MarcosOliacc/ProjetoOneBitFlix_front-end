@@ -1,0 +1,61 @@
+@import '@/styles/variables.module.scss';
+.sect {
+    width: 80%;
+    margin: auto;
+}
+.title {
+    font-size: 50px;
+    line-height: 50px;
+    width: 660px;
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.699);
+}
+.description {
+    color: $lightGray;
+    font-size: 21px;
+    width: 660px;
+    margin:40px 0px 80px 0px;
+    text-align: justify;
+}
+.link { text-decoration: none;}
+.button {
+    font-weight: bold;
+    display: flex;
+    border-color: $lightRed;
+    align-items: center;
+    gap: 25px;
+    transition: 300ms ease-in-out;
+    .btnImg {
+        width: 11px;
+    }
+    &:hover {
+        box-shadow: 2px 2px 2px $darkRed;
+        text-shadow: 1px 1px 10px #ff004457;
+    }
+}
+@media (max-width: 800px) {
+    .title {
+        width: 100%;
+        font-size: 35px;
+        line-height: 40px;
+    }
+    .description {
+        width: 100%;
+        font-size: 18px;
+        margin:30px 0px 60px 0px;
+    }
+}
+@media (max-width: 570px) {
+    .sect {
+        width: 90%;
+    }
+    .title {
+        font-size: 25px;
+        line-height: 30px;
+    }
+    .description {
+        font-size: 15px;
+    }
+    .button {
+        font-size: 15px;
+    }
+}

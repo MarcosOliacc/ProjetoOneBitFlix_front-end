@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import styles from './styles.module.scss'
 import Modal from 'react-modal'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 Modal.setAppElement('body')
 

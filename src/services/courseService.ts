@@ -24,7 +24,7 @@ const courseService = {
         })
         return res.data
     },
-    getFeatured: async (token:string) => {
+    getFeatured: async (token:string| null) => {
         const res = await api.get('/courses/featured', {
             headers: {
                 Authorization: `Bearer ${token}`

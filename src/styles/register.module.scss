@@ -2,11 +2,13 @@
 
 .main {
     background: linear-gradient(to bottom, #151515, #000);
+    overflow: hidden;
 }
 .sect {
     width: 60%;
     margin: auto;
     padding: 20px 0px;
+    overflow: hidden;
 }
 .head {
     display: flex;
@@ -71,6 +73,7 @@
     text-transform: uppercase;
     padding: 8px;
     border-radius: 5px;
+    transition: 400ms;
 }
 
 @media (max-width: 1050px) {
