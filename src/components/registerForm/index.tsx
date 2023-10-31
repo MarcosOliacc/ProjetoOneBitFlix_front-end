@@ -7,7 +7,7 @@ import ToastComponent from "../common/toast"
 
 function RegisterForm() {
     const router = useRouter()
-    const [toastMsg, setToastMsg] = useState("o")
+    const [toastMsg, setToastMsg] = useState("")
     const [color, setColor] = useState('desable')
     async function createUser(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()

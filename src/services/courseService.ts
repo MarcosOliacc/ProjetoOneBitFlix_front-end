@@ -20,7 +20,7 @@ const courseService = {
     getNewest: async ()=> {
         const res = await api.get('/courses/newest').catch((error)=>{
             console.log(error.response.data.message)
-            return error.responde
+            return error.response
         })
         return res.data
     },
@@ -31,7 +31,7 @@ const courseService = {
             }
         }).catch((error)=>{
             console.log(error.response.data.message)
-            return error.responde
+            return error.response
         })
         return res
     }

@@ -2,13 +2,14 @@
 
 .main {
     background: linear-gradient(to bottom, #151515, #000);
-    overflow: hidden;
+    position: relative;
+    overflow: hidden;    
 }
 .sect {
     width: 60%;
     margin: auto;
     padding: 20px 0px;
-    overflow: hidden;
+
 }
 .head {
     display: flex;
@@ -64,6 +65,10 @@
 }
 .formBtn {
     border-color: $lightRed;
+}
+.fdp {
+    position: relative;
+    overflow: hidden;
 }
 .toast {
     position: absolute;

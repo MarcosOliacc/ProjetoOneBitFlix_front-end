@@ -8,7 +8,7 @@ import ToastComponent from "../common/toast"
 function LoginForm() {
     const searchParams = useSearchParams()
     const router = useRouter()
-    const [toastMsg, setToastMsg] = useState('o')
+    const [toastMsg, setToastMsg] = useState('')
     const [color, setColor] = useState('desable')
     const registerSuccess = searchParams.get('registred')
 

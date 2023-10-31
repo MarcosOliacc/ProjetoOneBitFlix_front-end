@@ -6,6 +6,7 @@ import courseService, { CourseType } from '@/services/courseService'
 import HeaderAuth from "@/components/common/headerAuth"
 import { useState } from 'react'
 import Link from 'next/link'
+import Error from './error'
 
 
 export const FeaturedSection = () => {
@@ -14,18 +15,14 @@ export const FeaturedSection = () => {
         return storage
     })
     
-    const {data,error} = useSWR('/featured', ()=>courseService.getFeatured(token))
-    if(error) return(
-        <>
-            <h2>algo deu errado</h2>
-        </>
-    )
-    if(!data) return(<p>Loading...</p>)
-    return (
+    const { data, error } = useSWR('/featured', ()=>courseService.getFeatured(token))
+    if(!data) return (<><p>loading</p></>)
+    if(data.status == 401) return (<><Error/></>)
+    if(data) return (
         <>
             {data.data?.map((course:CourseType)=>(
                 <div style={{
-                        backgroundImage: `linear-gradient(to bottom, #6666661a, #151515), url(${process.env.NEXT_PUBLIC_BASEURL}/${course.thumbnailUrl})`,
+                        backgroundImage: `linear-gradient(#151515, #6666661a, #151515), url(${process.env.NEXT_PUBLIC_BASEURL}/${course.thumbnailUrl})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         height: '480px',

@@ -1,5 +1,6 @@
 
 import { FeaturedSection } from "@/components/homeAuth/featuredSection"
+import NewestSection from "@/components/homeAuth/newestSection"
 
 export const metadata = {
     title: 'OneBitFlix - Home',
@@ -11,6 +12,7 @@ const HomeAuth = () => {
         <>
             <main>
                 <FeaturedSection/>
+                <NewestSection/>
             </main>
         </>
     )
