@@ -13,7 +13,6 @@ const Profile = () => {
             <main>
                 <HeaderAuth/>
                 <ProfileSection/>
-                
             </main> 
         </>
     )
