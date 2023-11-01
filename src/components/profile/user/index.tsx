@@ -47,28 +47,20 @@ const UserForm = () => {
                             value='userPhone' required
                         />
                     </div>   
+                </div>
+                <div className={styles.groupContent}>
                     <div className={styles.formGroup}>
-                        <label htmlFor="birth" className={styles.label}>DATA DE NASCIMENTO</label>
-                        <input type="date" 
-                            name='birth' 
-                            id='birth' 
-                            placeholder='dd/mm/aaaa' 
+                        <label htmlFor="email" className={styles.label}>EMAIL</label>
+                        <input type="email" 
+                            name='email' 
+                            id='email' 
+                            placeholder='jhonDoe@email.com' 
                             className={styles.inputF}
-                            value='userBirth' required
+                            value='userEmail' required
                         />
-                    </div>   
+                    </div>                    
                 </div>
 
-                <div className={styles.formGroup}>
-                    <label htmlFor="email" className={styles.label}>EMAIL</label>
-                    <input type="date" 
-                        name='email' 
-                        id='email' 
-                        placeholder='jhonDoe@email.com' 
-                        className={styles.inputF}
-                        value='userEmail' required
-                    />
-                </div>
                 <button type='submit' className={styles.formBtn}>SALVAR ALTERAÇÕES</button>   
  
 

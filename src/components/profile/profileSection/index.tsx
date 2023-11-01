@@ -1,5 +1,6 @@
 import styles from "@/styles/profile.module.scss"
 import UserForm from "../user"
+import Footer from "@/components/common/footer"
 
 export default function ProfileSection() {
     return (
@@ -17,6 +18,7 @@ export default function ProfileSection() {
                 </div>
                 
             </section>
+            <Footer/>
         </>
     )
 
