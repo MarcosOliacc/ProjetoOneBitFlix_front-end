@@ -23,7 +23,6 @@ const FavoriteSection = () => {
             </section>
         </>
     )
-    console.log(data)
     if(data.status == 401) return (<><Error/></>)
 
     if(data.data.courses.length >= 6) return(

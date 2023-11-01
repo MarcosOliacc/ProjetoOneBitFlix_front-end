@@ -5,19 +5,31 @@ import styles from './styles.module.scss'
 import Modal from 'react-modal'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import './basic.scss'
 Modal.setAppElement('body')
 
 const HeaderAuth = ()=> {
     const router = useRouter()
     const [modalOpen, setModalOpen] = useState(false)
+    const [id, setId] = useState('')
 
     const hendleLogout = () => {
         sessionStorage.clear()
         router.push('/login')
     }
-
+    if(typeof window !== 'undefined') {
+        window.addEventListener('scroll', ()=> {
+            if(window.scrollY > 0) {
+                setId('active')
+                console.log('alo')
+            } else {
+                setId('')
+            }
+        })
+    }
     return (
-        <>
+        <>  
+        <div id={id} className={styles.conteiner}>
             <section className={styles.sect}>
                 <Link href='/home'>
                     <img src='/logoOnebitflix.svg' alt='logo onebitflix' className={styles.logoImg}/>
@@ -35,7 +47,9 @@ const HeaderAuth = ()=> {
                     <p className={styles.modalLink} onClick={hendleLogout}>SAIR</p>
                 </Modal>
 
-            </section>
+            </section>            
+        </div>
+
         </>
     )
 }

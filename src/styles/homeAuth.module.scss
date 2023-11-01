@@ -1,20 +1,21 @@
-
+@import '@/styles/variables.module.scss';
 
 .sectSlide {
-    width: 80%;
+    width: 100%;
     margin: auto;
+    padding-bottom: 30px;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
+
 .titleContent {
     width: 100%;
 }
-@media (max-width: 1270px) {
-    .sectTitle {
-        margin-left: 10%;
-    }
+.sectTitle {
+    text-transform: uppercase;
+    margin-left: 100px;
 }
+
 @media (max-width: 670px) {
     .titleContent {
         display: flex;

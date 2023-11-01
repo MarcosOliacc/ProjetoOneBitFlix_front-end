@@ -7,15 +7,17 @@ import { CourseType } from '@/services/courseService';
 import styles from './styles.module.scss'
 
 interface props {
-    courses: CourseType[]
+    courses: CourseType[] 
 }
 
 const SlideComponent = function ({courses}: props) {
+
     let slideCount = 0
-    if (courses.length >= 4) {
+    if (courses.length >= 6) {
         slideCount = 6
-    } else if(courses) {
+    } else {
         slideCount = courses.length
+        
     }
   return <>
     <div className={styles.content}>
@@ -26,30 +28,30 @@ const SlideComponent = function ({courses}: props) {
             perMove: 1,
             width: slideCount * 300,
             pagination: false,
-            arrows: courses.length > 4 ? true: false,
-            drag: courses.length > 4 ? true: false,
+            arrows: courses.length > 6 ? true: false,
+            drag: courses.length > 6 ? true: false,
             breakpoints: {
                 1890: {
-                    perPage: slideCount >= 5 ? 5 : 4,
-                    width:slideCount >= 5 ? 1500 : 1200,
+                    perPage: slideCount >= 5 ? 5 : courses.length,
+                    width:slideCount >= 5 ? 1500 : courses.length * 300,
                     arrows: courses.length > 5 ? true: false,
                     drag: courses.length > 5 ? true: false,                
                 },
                 1560: {
-                    perPage: slideCount >= 4 ? 4 : 3,
-                    width:slideCount >= 4 ? 1200 : 900,
+                    perPage: slideCount >= 4 ? 4 : courses.length,
+                    width:slideCount >= 4 ? 1200 : courses.length * 300,
                     arrows: courses.length > 4 ? true: false,
                     drag: courses.length > 4 ? true: false,        
                 },
                 1270: {
-                    perPage: slideCount >= 3 ? 3 : 2,
-                    width:slideCount >= 3 ? 900 : 600,
+                    perPage: slideCount >= 3 ? 3 : courses.length,
+                    width:slideCount >= 3 ? 900 : courses.length * 300,
                     arrows: courses.length > 3 ? true: false,
                     drag: courses.length > 3 ? true: false,
                 },
                 990: {
-                    perPage: slideCount >= 2 ? 2 : 1,
-                    width: slideCount >= 3 ? 600 : 300,
+                    perPage: slideCount >= 2 ? 2 : courses.length,
+                    width: slideCount >= 3 ? 600 : courses.length * 300,
                     arrows: courses.length > 2 ? true: false,
                     drag: courses.length > 2 ? true: false,
                 },

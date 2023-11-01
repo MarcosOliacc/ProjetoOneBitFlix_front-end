@@ -3,6 +3,7 @@ import { FeaturedSection } from "@/components/homeAuth/featuredSection"
 import NewestSection from "@/components/homeAuth/newestSection"
 import FavoriteSection from '@/components/homeAuth/favoriteSection'
 import ListCategories from '@/components/homeAuth/listCategories'
+import Footer from '@/components/common/footer'
 
 export const metadata = {
     title: 'OneBitFlix - Home',
@@ -17,6 +18,7 @@ const HomeAuth = () => {
                 <NewestSection/>
                 <FavoriteSection/>
                 <ListCategories/>
+                <Footer/>
             </main>
         </>
     )

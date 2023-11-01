@@ -4,6 +4,7 @@ import categoryService, { CategoryType } from "@/services/categoryService"
 import { useState } from "react"
 import useSWR from "swr"
 import styles from '@/styles/homeAuth.module.scss'
+import ListCoursesByCategory from "../listCoursesByCategory"
 
 export default function ListCategories() {
     const [token, setToken] = useState(()=> {
@@ -14,13 +15,13 @@ export default function ListCategories() {
     })
     const { data } = useSWR('/categories', ()=> categoryService.getCategories(token))
     if(!data) return (<></>)
-    console.log(data)
     if (data) return(
         <>
             {data.data?.categories.map((categ:CategoryType)=> (
-                <div key={categ.id}>
-                    <p>{categ.name}</p>
-                </div>
+                <section key={categ.id} className={styles.sectSlide}>
+                    <div className={styles.titleContent}><p className={styles.sectTitle}>{categ.name}</p></div>
+                    <ListCoursesByCategory categoryId={categ.id}/>
+                </section>
             ))}
         </>
     )
