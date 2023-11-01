@@ -34,6 +34,18 @@ const courseService = {
             return error.response
         })
         return res
+    },
+    getFavorites: async (token:string|null)=> {
+        
+        const res = await api.get('/favorites', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).catch((error)=>{
+            console.log(error.response.data.message)
+            return error.response
+        })
+        return res
     }
 }
 

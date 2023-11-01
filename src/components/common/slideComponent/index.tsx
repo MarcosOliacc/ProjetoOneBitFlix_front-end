@@ -13,7 +13,7 @@ interface props {
 const SlideComponent = function ({courses}: props) {
     let slideCount = 0
     if (courses.length >= 4) {
-        slideCount = 4
+        slideCount = 6
     } else if(courses) {
         slideCount = courses.length
     }
@@ -29,6 +29,18 @@ const SlideComponent = function ({courses}: props) {
             arrows: courses.length > 4 ? true: false,
             drag: courses.length > 4 ? true: false,
             breakpoints: {
+                1890: {
+                    perPage: slideCount >= 5 ? 5 : 4,
+                    width:slideCount >= 5 ? 1500 : 1200,
+                    arrows: courses.length > 5 ? true: false,
+                    drag: courses.length > 5 ? true: false,                
+                },
+                1560: {
+                    perPage: slideCount >= 4 ? 4 : 3,
+                    width:slideCount >= 4 ? 1200 : 900,
+                    arrows: courses.length > 4 ? true: false,
+                    drag: courses.length > 4 ? true: false,        
+                },
                 1270: {
                     perPage: slideCount >= 3 ? 3 : 2,
                     width:slideCount >= 3 ? 900 : 600,

@@ -7,8 +7,9 @@ const NewestSection = async () => {
 
     return (
         <>  
-            <section className={styles.sect}>
-                <p>LANÇAMENTOS</p>
+            <section className={styles.sectSlide}>
+                <div className={styles.titleContent}><p className={styles.sectTitle}>LANÇAMENTOS</p></div>
+                
                 <SlideComponent courses={courses}/>
             </section>
         </>

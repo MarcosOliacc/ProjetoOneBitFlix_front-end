@@ -7,16 +7,19 @@ import HeaderAuth from "@/components/common/headerAuth"
 import { useState } from 'react'
 import Link from 'next/link'
 import Error from './error'
+import Loading from './loading'
 
 
 export const FeaturedSection = () => {
     const [token, setToken] = useState(()=> {
-        const storage = sessionStorage.getItem('onebit-token')
-        return storage
+        if(typeof sessionStorage !== 'undefined') {
+            const storage = sessionStorage.getItem('onebit-token')
+            return storage
+        } else { return ''}
     })
     
     const { data, error } = useSWR('/featured', ()=>courseService.getFeatured(token))
-    if(!data) return (<><p>loading</p></>)
+    if(!data) return (<><Loading/></>)
     if(data.status == 401) return (<><Error/></>)
     if(data) return (
         <>
