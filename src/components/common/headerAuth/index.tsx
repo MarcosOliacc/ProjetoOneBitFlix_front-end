@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 'use client'
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
@@ -37,7 +38,7 @@ const HeaderAuth = ()=> {
                 <div className={styles.modalContent}>
                     <form className={styles.form}> <input type="search" name='search' placeholder='Pesquisar' className={styles.input}/></form>
                     <img src="/HomeAuth/iconSearch.svg" alt="lupaPesquisar" className={styles.searchImg}/>
-                    <p className={styles.userProfile} onClick={()=> setModalOpen(true)}>ab</p>
+                    <img src='/userProf.png' alt='userImg' className={styles.userProfile} onClick={()=> setModalOpen(true)}/>
                 </div>
                 <Modal isOpen={modalOpen} onRequestClose={()=> setModalOpen(false)} shouldCloseOnEsc={true}
                     className={styles.modal}
