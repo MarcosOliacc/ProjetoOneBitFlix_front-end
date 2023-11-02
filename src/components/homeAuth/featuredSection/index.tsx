@@ -31,7 +31,7 @@ export const FeaturedSection = () => {
                         height: '480px',
                         
                     }} key={course.id} className={styles.div2Father}>
-                    <HeaderAuth/>
+                    
                     <section className={styles.sect}>
                         <h2 className={styles.title}>{course.name}</h2>
                         <p className={styles.description}>{course.synopsis}</p>

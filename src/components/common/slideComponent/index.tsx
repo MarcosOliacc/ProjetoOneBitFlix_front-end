@@ -60,9 +60,6 @@ const SlideComponent = function ({courses}: props) {
                     width: 300,
                     arrows: courses.length > 1 ? true: false,
                     drag: courses.length > 1 ? true: false,
-                    autoplay: {
-                        interval: 3000
-                    }
                 },
                 365: {
                     width: 250

@@ -45,9 +45,10 @@ const UserForm = () => {
             setMessage('Atualizado com sucesso!')
             if(email !== initEmail) {
                 if(typeof sessionStorage !== 'undefined') {
-                    sessionStorage.clear()  
-                    setTimeout(()=>{router.push('/login?modified=true')},3000)
-                    
+                    setTimeout(()=>{
+                        sessionStorage.clear()
+                        router.push('/login?modified=true'
+                    )},500)
                 }
             }
         } else {

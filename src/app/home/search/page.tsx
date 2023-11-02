@@ -15,7 +15,6 @@ export default function Search() {
     return(
         <>
             <main>
-                <HeaderAuth/>
                 <SearchSection/>
                 <Footer/>
             </main>
