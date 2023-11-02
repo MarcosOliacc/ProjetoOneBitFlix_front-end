@@ -47,6 +47,31 @@ const courseService = {
         })
         return res
     },
+    addLike: async (token:string|null,courseId:number|string|null)=> {
+        
+        const res = await api.post(`/likes`,{courseId}, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).catch((error)=>{
+            console.log(error.response.data.message)
+            return error.response
+        })
+        return res.status
+    },
+    removeLike: async (token:string|null,courseId:number|string|null)=> {
+        
+        const res = await api.delete(`/likes/${courseId}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).catch((error)=>{
+            console.log(error.response.data.message)
+            return error.response
+        })
+        return res.status
+    },
+
     getSearch: async (token:string|null, name: string) => {
         const res = await api.get(`/courses/search?name=${name}`, {
             headers: {
@@ -57,8 +82,18 @@ const courseService = {
             return error.response
         })
         return res
-
-    }
+    },
+    getCourseWithEpisodes: async (token:string|null, id:number|string|null) => {
+        const res = await api.get(`/courses/${id}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).catch((error)=>{
+            console.log(error.response.data.message)
+            return error.response
+        })
+        return res
+    },
 }
 
 export default courseService
