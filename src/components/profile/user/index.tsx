@@ -4,6 +4,7 @@ import ToastComponent from '@/components/common/toast'
 import { ProfileService } from '@/services/profileService'
 import styles from '@/styles/profile.module.scss'
 import { FormEvent, useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 const UserForm = () => {
     const [token, setToken] = useState(()=> {
@@ -12,20 +13,25 @@ const UserForm = () => {
             return storage
         } else { return null}
     })
-    const [color, setColor] = useState('')
+    const router = useRouter()
+    const [color, setColor] = useState('desable')
     const [message, setMessage] = useState('')
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [phone, setPhone] = useState('')
     const [email, setEmail] = useState('')
+    const [initEmail, setInitEmail] = useState('')
     const [created, setCreated] = useState('')
 
+    const date = new Date(created)
+    const month = date.toLocaleDateString("default", {month: 'long'})
     useEffect(()=> {
         ProfileService.fetchCurrent(token).then((user)=> {
             setFirstName(user.firstName)
             setLastName(user.lastName)
             setPhone(user.phone)
             setEmail(user.email)
+            setInitEmail(user.email)
             setCreated(user.createdAt)
         })
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -37,6 +43,13 @@ const UserForm = () => {
             setColor('trueAct')
             setTimeout(()=>{setColor('desable')}, 3000)
             setMessage('Atualizado com sucesso!')
+            if(email !== initEmail) {
+                if(typeof sessionStorage !== 'undefined') {
+                    sessionStorage.clear()  
+                    setTimeout(()=>{router.push('/login?modified=true')},3000)
+                    
+                }
+            }
         } else {
             setColor('falseAct')
             setTimeout(()=>{setColor('desable')}, 3000)
@@ -52,11 +65,11 @@ const UserForm = () => {
             <form onSubmit={handleUserUpdate} className={styles.form}>
                 <div className={styles.userContent}>
                     <img src="/userProf.png" alt="userImg" className={styles.userImg}/>
-                    <p className={styles.userName}>Nome do Usuario</p>
+                    <p className={styles.userName}>{`${firstName} ${lastName}`}</p>
                 </div>
                 <div className={styles.formInfos}>
                     <img src="/profile/iconUserAccount.svg" alt="userImg" className={styles.formImg}/>
-                    <p className={styles.userTime}>Membro desde <br /> 20 de Abril de 2020</p>
+                    <p className={styles.userTime}>Membro desde <br /> {`${date.getDate()} de ${month} de ${date.getFullYear()}`}</p>
                 </div>
                 <hr />
                 <div className={styles.groupContent}>
@@ -103,7 +116,7 @@ const UserForm = () => {
                             name='email' 
                             id='email' 
                             placeholder='jhonDoe@email.com' 
-                            className={styles.inputF}
+                            className={styles.input}
                             value={email} required
                             onChange={(event)=> setEmail(event.target.value)}
                         />

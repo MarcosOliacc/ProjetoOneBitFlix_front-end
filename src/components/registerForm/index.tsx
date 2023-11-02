@@ -83,11 +83,11 @@ function RegisterForm() {
                 </div>
                 <div className={styles.group}>
                         <label htmlFor="password">Senha</label>
-                        <input type="text" id='password' className={styles.input} placeholder='Digite dua senha (min: 8 caracteres)' required minLength={8} maxLength={20} name="password"/>
+                        <input type="password" id='password' className={styles.input} placeholder='Digite dua senha (min: 8 caracteres)' required minLength={8} maxLength={20} name="password"/>
                 </div>
                 <div className={styles.group}>
                         <label htmlFor="Rpassword">Confirme a senha</label>
-                        <input type="text" id='Rpassword' className={styles.input} placeholder='Repita a sua senha' required name="confPassword"/>
+                        <input type="password" id='Rpassword' className={styles.input} placeholder='Repita a sua senha' required name="confPassword"/>
                 </div>
                 <button type='submit' className={styles.formBtn}>CADASTRAR</button>
             </form>        

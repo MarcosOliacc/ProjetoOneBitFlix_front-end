@@ -10,7 +10,7 @@ export const metadata = {
 const Profile = () => {
     return(
         <>
-            <main>
+            <main className={styles.main}>
                 <HeaderAuth/>
                 <ProfileSection/>
             </main> 

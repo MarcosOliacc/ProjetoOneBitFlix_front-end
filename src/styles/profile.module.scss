@@ -1,22 +1,30 @@
 @import '@/styles/variables.module.scss';
 
+
+.main {
+    position: relative;
+    overflow-x: hidden;
+}
 .profSect {
     width: 80%;
     margin: auto;
     padding-top: 100px;
     display: grid;
     grid-template-columns: 1fr 2fr;
+    overflow-x: hidden;
 }
 .divConteiner {
     display: flex;
     flex-direction: column;
     gap: 10px;
+
 }
 .divContent {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-bottom: 30px;
+    overflow-x: hidden;
 }
 .divBtn {
     width: 200px;
@@ -86,8 +94,13 @@
     background-color: transparent;
     border: 1px solid $darkGray;
     color: #fff;
+    text-transform: uppercase;
     padding-left: 5px;
     border-radius: 5px;
+}
+.input {
+    @extend .inputF;
+    text-transform: none;
 }
 .label {
     font-size: 14px;

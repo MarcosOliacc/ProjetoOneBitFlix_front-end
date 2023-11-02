@@ -4,7 +4,7 @@ import Footer from "@/components/common/footer"
 
 export default function ProfileSection() {
     return (
-        <>
+        <div className={styles.check}>
             <section className={styles.profSect}>
                 <div className={styles.divConteiner}>
                     <p className={styles.title}>Minha Conta</p>
@@ -19,7 +19,7 @@ export default function ProfileSection() {
                 
             </section>
             <Footer/>
-        </>
+        </div>
     )
 
 }

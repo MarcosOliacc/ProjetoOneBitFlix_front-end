@@ -11,6 +11,7 @@ function LoginForm() {
     const [toastMsg, setToastMsg] = useState('')
     const [color, setColor] = useState('desable')
     const registerSuccess = searchParams.get('registred')
+    const modified = searchParams.get('modified')
 
     useEffect(()=> {
         if(sessionStorage.getItem('onebit-token')) {
@@ -24,8 +25,12 @@ function LoginForm() {
             setColor('trueAct')
             setTimeout(()=>{setColor('desable')}, 3000)
             setToastMsg('Cadastrado com sucesso!')
-        }
-    }, [registerSuccess])
+        } else if (modified === 'true'){
+            setColor('trueAct')
+            setTimeout(()=>{setColor('desable')}, 3000)
+            setToastMsg('Email modificado, faça o login novamente')
+        }   
+    }, [registerSuccess, modified])
     
     async function loginUser(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
@@ -54,7 +59,7 @@ function LoginForm() {
                 </div>
                 <div className={styles.group}>
                         <label htmlFor="password">Senha</label>
-                        <input type="text" id='password' className={styles.input} placeholder='Digite dua senha (min: 8 caracteres)' required name="password"/>
+                        <input type="password" id='password' className={styles.input} placeholder='Digite dua senha (min: 8 caracteres)' required name="password"/>
                 </div>
                 <button type='submit' className={styles.formBtn}>ENTRAR</button>
             </form>        
