@@ -7,6 +7,16 @@
     align-items: flex-start;
     padding-top: 100px;
 }
+.loadSect {
+    @extend .sect;
+    align-items: center;
+    justify-content: center;
+}
+.divFather {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .title {
     font-size: 50px;
     line-height: 50px;
@@ -36,6 +46,23 @@
         text-shadow: 1px 1px 10px #ff004457;
     }
 }
+.spinner {
+
+    width: 60px;
+    height: 60px;
+    border: 6px solid transparent;
+    border-top-color: #ff004485;
+    border-left-color: #ff004485;
+    border-right-color: #ff004485;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 @media (max-width: 800px) {
     .sect {
         padding-top: 150px;

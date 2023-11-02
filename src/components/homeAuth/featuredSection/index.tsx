@@ -30,7 +30,7 @@ export const FeaturedSection = () => {
                         backgroundPosition: 'center',
                         height: '480px',
                         
-                    }} key={course.id} className={styles.divFather}>
+                    }} key={course.id} className={styles.div2Father}>
                     <HeaderAuth/>
                     <section className={styles.sect}>
                         <h2 className={styles.title}>{course.name}</h2>

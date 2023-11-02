@@ -10,7 +10,8 @@ const Loading = ()=> {
                     height: '480px',
                 }}className={styles.divFather}>
                 <HeaderAuth/>
-                <section className={styles.sect}>
+                <section className={styles.loadSect}>
+                    <div className={styles.spinner}></div>
                 </section>
                 
             </div>
