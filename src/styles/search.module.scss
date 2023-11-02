@@ -1,0 +1,19 @@
+.sect {
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 0px;
+    justify-content: center;
+}
+.noRes {
+    text-align: center;
+    font-weight: bold;
+
+}
+@media (max-width: 800px) {
+    .sect {
+        padding-top: 150px;
+    }
+}

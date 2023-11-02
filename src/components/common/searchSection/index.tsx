@@ -3,6 +3,7 @@ import { useSearchParams } from "next/navigation"
 import styles from '@/styles/search.module.scss'
 import { useState, useEffect } from 'react'
 import courseService, { CourseType } from "@/services/courseService"
+import SlideCard from "../slideCard"
 
 export default function SearchSection() {
     const [token, setToken] = useState(()=> {
@@ -28,12 +29,12 @@ export default function SearchSection() {
     }, [params])
 
     return(
-        <>
-        {results?.map((course)=>(
+        <section className={styles.sect}>
+        {results.length ? results.map((course)=>(
             <div key={course.id}>
-                <p>{course.name}</p>
+                <SlideCard course={course}/>
             </div>
-        ))}
-        </>
+        )): <p className={styles.notRes}>NENHUM RESULTADO FOI ENCONTRADO.</p>}
+        </section>
     )
 }
