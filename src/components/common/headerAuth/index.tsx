@@ -4,7 +4,7 @@
 import Link from 'next/link'
 import styles from './styles.module.scss'
 import Modal from 'react-modal'
-import { useState } from 'react'
+import { useState, FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import './basic.scss'
 Modal.setAppElement('body')
@@ -13,7 +13,20 @@ const HeaderAuth = ()=> {
     const router = useRouter()
     const [modalOpen, setModalOpen] = useState(false)
     const [id, setId] = useState('')
+    const [sName, setSName] = useState('')
 
+    const handleSearch = async(event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
+        router.push(`/search?name=${sName}`)
+        setSName('')
+    }
+    const handleSearchClick = ()=> {
+        if(sName){
+            router.push(`/search?name=${sName}`)
+            setSName('')            
+        }
+
+    }
     const hendleLogout = () => {
         sessionStorage.clear()
         router.push('/login')
@@ -28,16 +41,26 @@ const HeaderAuth = ()=> {
             }
         })
     }
+
+    
     return (
         <>  
         <div id={id} className={styles.conteiner}>
-            <section className={styles.sect}>
+            <section onSubmit={handleSearch} className={styles.sect}>
                 <Link href='/home'>
                     <img src='/logoOnebitflix.svg' alt='logo onebitflix' className={styles.logoImg}/>
                 </Link>
                 <div className={styles.modalContent}>
-                    <form className={styles.form}> <input type="search" name='search' placeholder='Pesquisar' className={styles.input}/></form>
-                    <img src="/HomeAuth/iconSearch.svg" alt="lupaPesquisar" className={styles.searchImg}/>
+                    <form className={styles.form}>
+                        <input type="search" 
+                        name='search'
+                        placeholder='Pesquisar' 
+                        className={styles.input}
+                        value={sName}
+                        onChange={(ev)=> {setSName(ev.currentTarget.value.toLocaleLowerCase())}}
+                        />
+                    </form>
+                    <img src="/HomeAuth/iconSearch.svg" alt="lupaPesquisar" className={styles.searchImg} onClick={handleSearchClick}/>
                     <img src='/userProf.png' alt='userImg' className={styles.userProfile} onClick={()=> setModalOpen(true)}/>
                 </div>
                 <Modal isOpen={modalOpen} onRequestClose={()=> setModalOpen(false)} shouldCloseOnEsc={true}

@@ -46,6 +46,18 @@ const courseService = {
             return error.response
         })
         return res
+    },
+    getSearch: async (token:string|null, name: string) => {
+        const res = await api.get(`/courses/search?name=${name}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).catch((error)=>{
+            console.log(error.response.data.message)
+            return error.response
+        })
+        return res
+
     }
 }
 
