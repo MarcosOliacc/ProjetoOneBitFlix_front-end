@@ -35,7 +35,7 @@ export const FeaturedSection = () => {
                     <section className={styles.sect}>
                         <h2 className={styles.title}>{course.name}</h2>
                         <p className={styles.description}>{course.synopsis}</p>
-                        <Link href='' className={styles.link}>
+                        <Link href={`/home/course/${course.id}`} className={styles.link}>
                             <button className={styles.button}>
                                 ACESSE AGORA
                                 <img src="/buttonPlay.svg" alt="playButton" className={styles.btnImg}/>

@@ -25,7 +25,7 @@ const FavoriteSection = () => {
     )
     if(data.status == 401) return (<><Error/></>)
 
-    if(data.data.courses.length >= 6) return(
+    if(data.data.courses.length >= 1) return(
         <>
             <section className={styles.sectSlide}>
             <div className={styles.titleContent}><p className={styles.sectTitle}>FAVORITOS</p></div>

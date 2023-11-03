@@ -13,12 +13,12 @@
 .title {
     font-size: 60px;
     text-shadow: 3px 3px 5px rgb(29, 29, 29);
-    width: 800px;
+    max-width: 800px;
     margin-bottom: 25px;
 }
 .descrip {
     font-size: 20px;
-    width: 650px;
+    max-width: 650px;
     color: $lightGray;
     padding-bottom: 25px;
 }
@@ -44,7 +44,103 @@
     }
 }
 .interImg {
-    margin-top: 20px;
+    margin: 20px 0px 40px 0px;
     width: 36px;
     cursor: pointer;
+}
+.sectEpisodes {
+    @extend .sect;
+    margin: 0px auto;
+}
+.lineEp {
+    background-color: $darkRed;
+    max-width: 300px;
+    height: 2px;
+    margin: 6px 0px 10px -10px;
+}
+.listTitle {
+    font-size: 20px;
+    font-weight: bold;
+}
+.listSub {
+    color: $mediumGray;
+}
+.epContent {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.epCard {
+    border: 1px solid $darkGray;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 500px;
+    transition: 400ms;
+    cursor: pointer;
+    &:hover {
+        border-color: $lightRed;
+        box-shadow: 2px 2px 3px $darkRed;
+    }
+}
+.epTitle {
+    padding: 20px 20px;
+}
+.epDescrip {
+    font-size: 15px;
+}
+.epLong{
+    margin-left: 10px;
+    color: $darkGray;
+}
+@media (max-height: 620px) {
+    .conteiner {
+        height: 350px;
+    }
+}
+@media (max-width: 1000px) {
+    .title{
+        font-size: 40px;
+        max-width: 600px;
+    }
+    .descrip{
+        font-size: 16px;
+        max-width: 450px;
+    }
+    .playBtn {
+        font-size: 16px;
+    }
+}
+@media (max-width: 650px) {
+    .sect {
+        width: 90%;
+    }
+    .title{
+        font-size: 30px;
+        max-width: 500px;
+    }
+    .descrip{
+        font-size: 15px;
+        max-width: 350px;
+    }
+}
+@media (max-width: 445px)  {
+    .title{
+        font-size: 20px;
+        max-width: 400px;
+    }
+    .descrip{
+        font-size: 14px;
+        max-width: 300px;
+    }
+    .epTitle {
+        font-size: 16px;
+        padding: 20px 20px;
+    }
+    .epDescrip {
+        font-size: 14px;
+    }
+    .interImg {
+        width: 30px;
+    }
 }

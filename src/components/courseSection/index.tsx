@@ -81,7 +81,8 @@ export default function CourseSection() {
                     onClick={handleFav}
                     />
                 </div>
-                <EpisodesSection />
+                {course.episodes ? <EpisodesSection episodes={course.episodes}/>: <></>}
+                
             </main>
         </>
     )

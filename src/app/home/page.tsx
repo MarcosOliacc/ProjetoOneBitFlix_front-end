@@ -16,8 +16,8 @@ const HomeAuth = () => {
             <main className={styles.main}>
                 <FeaturedSection/>
                 <NewestSection/>
-                <FavoriteSection/>
                 <ListCategories/>
+                <FavoriteSection/>
                 <Footer/>
             </main>
         </>

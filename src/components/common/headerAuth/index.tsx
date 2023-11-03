@@ -35,7 +35,6 @@ const HeaderAuth = ()=> {
         window.addEventListener('scroll', ()=> {
             if(window.scrollY > 0) {
                 setId('active')
-                console.log('alo')
             } else {
                 setId('')
             }
