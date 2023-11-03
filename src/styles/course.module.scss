@@ -1,0 +1,50 @@
+@import '@/styles/variables.module.scss';
+.conteiner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 500px;
+}
+.sect {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.title {
+    font-size: 60px;
+    text-shadow: 3px 3px 5px rgb(29, 29, 29);
+    width: 800px;
+    margin-bottom: 25px;
+}
+.descrip {
+    font-size: 20px;
+    width: 650px;
+    color: $lightGray;
+    padding-bottom: 25px;
+}
+.link {
+    text-decoration: none;
+}
+.btnContent {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+}
+.playBtn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-color: $lightRed;
+    &:hover {
+        box-shadow: 2px 2px 3px $darkRed;
+    }
+    .btnImg {
+        width: 11px;
+    }
+}
+.interImg {
+    margin-top: 20px;
+    width: 36px;
+    cursor: pointer;
+}

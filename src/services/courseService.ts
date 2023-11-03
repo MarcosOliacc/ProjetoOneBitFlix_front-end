@@ -71,6 +71,28 @@ const courseService = {
         })
         return res.status
     },
+    addFavorite: async(token:string|null, courseId:number|string|null) => {
+        const res = await api.post('/favorites', {courseId}, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).catch((error)=>{
+            console.log(error.response.data.message)
+            return error.response
+        })
+        res.status
+    },
+    removeFavorite: async(token:string|null, courseId:number|string|null) => {
+        const res = await api.delete(`/favorites/${courseId}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).catch((error)=>{
+            console.log(error.response.data.message)
+            return error.response
+        })
+        res.status
+    },
 
     getSearch: async (token:string|null, name: string) => {
         const res = await api.get(`/courses/search?name=${name}`, {
