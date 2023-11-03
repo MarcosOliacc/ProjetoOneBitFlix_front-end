@@ -51,16 +51,7 @@ const HeaderAuth = ()=> {
                 </Link>
                 <div className={styles.modalContent}>
                     <form className={styles.form}>
-                        <input type="search" 
-                        name='search'
-                        placeholder='Pesquisar' 
-                        className={styles.input}
-                        value={sName}
-                        onChange={(ev)=> {setSName(ev.currentTarget.value.toLocaleLowerCase())}}
-                        />
-                    </form>
-                    <img src="/HomeAuth/iconSearch.svg" alt="lupaPesquisar" className={styles.searchImg} onClick={handleSearchClick}/>
-                    <img src='/userProf.png' alt='userImg' className={styles.userProfile} onClick={()=> setModalOpen(true)}/>
+                        <inp
                 </div>
                 <Modal isOpen={modalOpen} onRequestClose={()=> setModalOpen(false)} shouldCloseOnEsc={true}
                     className={styles.modal}
