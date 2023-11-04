@@ -55,25 +55,5 @@ const HeaderAuth = ()=> {
                         name='search'
                         placeholder='Pesquisar' 
                         className={styles.input}
-                        value={sName}
-                        onChange={(ev)=> {setSName(ev.currentTarget.value.toLocaleLowerCase())}}
-                        />
-                    </form>
-                    <img src="/HomeAuth/iconSearch.svg" alt="lupaPesquisar" className={styles.searchImg} onClick={handleSearchClick}/>
-                    <img src='/userProf.png' alt='userImg' className={styles.userProfile} onClick={()=> setModalOpen(true)}/>
-                </div>
-                <Modal isOpen={modalOpen} onRequestClose={()=> setModalOpen(false)} shouldCloseOnEsc={true}
-                    className={styles.modal}
-                    overlayClassName={styles.overlay}
-                >
-                    <Link href='/profile' className={styles.link}><p className={styles.modalLink}>SEUS DADOS</p></Link>
-                    <p className={styles.modalLink} onClick={hendleLogout}>SAIR</p>
-                </Modal>
 
-            </section>            
-        </div>
-
-        </>
-    )
-}
 export default HeaderAuth
