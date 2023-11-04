@@ -29,12 +29,6 @@ export default function SearchSection() {
     }, [params])
 
     return(
-        <section className={styles.sect}>
-        {results.length ? results.map((course)=>(
-            <div key={course.id}>
-                <SlideCard course={course}/>
-            </div>
-        )): <p className={styles.notRes}>NENHUM RESULTADO FOI ENCONTRADO.</p>}
-        </section>
+
     )
 }
