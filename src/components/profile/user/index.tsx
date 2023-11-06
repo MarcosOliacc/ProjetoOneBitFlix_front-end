@@ -13,6 +13,7 @@ const UserForm = () => {
             return storage
         } else { return null}
     })
+    
     const router = useRouter()
     const [color, setColor] = useState('desable')
     const [message, setMessage] = useState('')
@@ -59,7 +60,12 @@ const UserForm = () => {
     }
 
     
-
+    if(!token) {
+        setTimeout(() => {
+            router.push('/')
+        }, 3000);
+        return(<></>)
+    }
     return(
         <>  
             <ToastComponent color={color} message={message}/>

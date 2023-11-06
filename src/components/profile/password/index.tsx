@@ -2,6 +2,7 @@
 import ToastComponent from '@/components/common/toast'
 import { ProfileService } from '@/services/profileService'
 import styles from '@/styles/profile.module.scss'
+import { useRouter } from 'next/navigation'
 import { useState, FormEvent } from 'react'
 import useSWR from 'swr'
 export default function PasswordForm() {
@@ -11,6 +12,7 @@ export default function PasswordForm() {
             return storage
         } else { return null}
     })
+    const router = useRouter()
     const [color, setColor] = useState('desable')
     const [message, setMessage] = useState('')
     const [p1,setp1] = useState('')
@@ -55,6 +57,12 @@ export default function PasswordForm() {
             setp1('');setp2('');setp3('')
             return
         }
+    }
+    if(!token) {
+        setTimeout(() => {
+            router.push('/')
+        }, 3000);
+        return(<></>)
     }
     return(
         <>

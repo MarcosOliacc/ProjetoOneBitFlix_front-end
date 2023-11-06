@@ -5,6 +5,7 @@ import { useState } from "react"
 import useSWR from "swr"
 import styles from '@/styles/homeAuth.module.scss'
 import ListCoursesByCategory from "../listCoursesByCategory"
+import Error from "../featuredSection/error"
 
 export default function ListCategories() {
     const [token, setToken] = useState(()=> {

@@ -42,7 +42,6 @@ export default function EpisodePlayer() {
         }
         
     }
-    
     const getCourse = async () => {
         if(typeof courseId !== 'string') return;
         const res = await courseService.getCourseWithEpisodes(token, courseId)
@@ -69,9 +68,6 @@ export default function EpisodePlayer() {
     function handleNext() {
         router3.push(`/home/course/episode/${episodeOrder + 1}?courseId=${course!.id}`)
     }
-    
-
-    
     return(
         <section className={styles.sect}>
             <ReactPlayer 

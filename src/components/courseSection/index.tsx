@@ -67,7 +67,7 @@ export default function CourseSection() {
                 </section>
                 </div>
                 <div className={styles.btnContent}>
-                    <Link href='' className={styles.link}>
+                    <Link href={`/home/course/episode/0?courseId=${course.id}`} className={styles.link}>
                         <button className={styles.playBtn} disabled={course.episodes?.length === 0 ? true : false}>ASSISTIR AGORA
                             <img src="/buttonPlay.svg" alt="ButtonPlay" className={styles.btnImg}/>
                         </button>
