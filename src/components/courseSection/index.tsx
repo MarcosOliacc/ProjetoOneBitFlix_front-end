@@ -73,10 +73,6 @@ export default function CourseSection() {
                         </button>
                     </Link>
                 </div>
-                <div className={styles.btnContent}>
-                    <img src={liked === true ? `/course/iconLiked.svg`:`/course/iconLike.svg`} alt="likeImg"  className={styles.interImg}
-                    onClick={handleLike}
-                    />
                     <img src={favorited === false? `/course/iconAddFav.svg`:`/course/iconFavorited.svg`} alt="favImg"  className={styles.interImg}
                     onClick={handleFav}
                     />
