@@ -68,7 +68,7 @@ export default function CourseSection() {
                 </div>
                 <div className={styles.btnContent}>
                     <Link href='' className={styles.link}>
-                        <button className={styles.playBtn}>ASSISTIR AGORA
+                        <button className={styles.playBtn} disabled={course.episodes?.length === 0 ? true : false}>ASSISTIR AGORA
                             <img src="/buttonPlay.svg" alt="ButtonPlay" className={styles.btnImg}/>
                         </button>
                     </Link>
@@ -81,7 +81,7 @@ export default function CourseSection() {
                     onClick={handleFav}
                     />
                 </div>
-                {course.episodes ? <EpisodesSection episodes={course.episodes}/>: <></>}
+                {course.episodes ? <EpisodesSection episodes={course.episodes} courseId={course.id}/>: <></>}
                 
             </main>
         </>

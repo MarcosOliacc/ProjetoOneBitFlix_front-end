@@ -1,0 +1,45 @@
+@import '@/styles/variables.module.scss';
+
+.main {
+    padding-top: 100px;
+}
+.sect {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.episodeTitle {
+    font-size: 36px;
+    font-weight: bold;
+}
+.btnContent {
+    display: flex;
+    gap: 20px;
+}
+.episodeBtn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px; 
+    p {
+        margin-top: 2px;
+    }
+    border-radius: 20px;
+    &:hover {
+        border-color: $lightRed;
+    }
+    &:disabled {
+        color: $darkGray;
+        cursor: default;
+        border-color: $darkGray;
+    }
+}
+.btnImg {
+    width: 8px;
+    transition: 400ms;
+
+
+}
