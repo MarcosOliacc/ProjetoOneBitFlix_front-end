@@ -22,7 +22,7 @@ const courseService = {
             console.log(error.response.data.message)
             return error.response
         })
-        return res
+        return res.data
     },
     getFeatured: async (token:string| null) => {
         const res = await api.get('/courses/featured', {
