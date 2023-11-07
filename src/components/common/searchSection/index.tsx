@@ -19,8 +19,10 @@ export default function SearchSection() {
     const searchCourses = async() => {
         if(typeof params === 'string') {
             const res = await courseService.getSearch(token,params)
-
-            setResults(res.data.courses)
+            if (res.data) {
+                setResults(res.data.courses)
+            }
+            
         }
     }
     useEffect(()=> {

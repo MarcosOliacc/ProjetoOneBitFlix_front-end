@@ -10,7 +10,7 @@ const NewestSection = async () => {
             <section className={styles.sectSlide}>
                 <div className={styles.titleContent}><p className={styles.sectTitle}>LANÇAMENTOS</p></div>
                 
-                <SlideComponent courses={courses}/>
+                <SlideComponent courses={courses?.data}/>
             </section>
         </>
     )
