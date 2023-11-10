@@ -57,7 +57,7 @@ export default function CourseSection() {
         <>
             <main>
                 <div className={styles.conteiner} style={{
-                    backgroundImage:`li(#151515, #6666661a, #151515), url(${process.env.NEXT_PUBLIC_BASEURL}/${e.thumbnailUrl})`,
+                    backgroundImage:`li(#151515, #6666661a, #151515), url(${process.env.NEXT_PUBLIC_BASEURL}/${course.thumbnailUrl})`,
                     backgroundSize:'cover',
                     backgroundPosition: 'center'
                 }}>
