@@ -17,7 +17,10 @@ export default function CourseSection() {
     const getCourses = async () => {
         const res = await courseService.getCourseWithEpisodes(token,id.toString())
         if(res.status == 200) {
-
+            setCourse(res.data)
+            setLiked(res.data.liked)
+            setFavorited(res.data.favorited)
+            console.log(res.data)
         }
     }
     useEffect(()=>{
