@@ -9,7 +9,12 @@ import Link from 'next/link';
 import EpisodesSection from '../common/episodeSection';
 
 export default function CourseSection() {
-
+    const [token, setToken] = useState(()=> {
+        if(typeof sessionStorage !== 'undefined') {
+            const storage = sessionStorage.getItem('onebit-token')
+            return storage
+        } else { return null}
+    })
     const [liked, setLiked] = useState(false)
     const [favorited, setFavorited] = useState(false)
     const [course, setCourse] = useState<CourseType>()
