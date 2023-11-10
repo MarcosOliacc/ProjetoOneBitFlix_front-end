@@ -57,9 +57,9 @@ export default function CourseSection() {
         <>
             <main>
                 <div className={styles.conteiner} style={{
-                    backgroundImage:`linear-gradient(#151515, #6666661a, #151515), url(${process.env.NEXT_PUBLIC_BASEURL}/${course.thumbnailUrl})`,
+                    backgroundImage:`li(#151515, #6666661a, #151515), url(${process.env.NEXT_PUBLIC_BASEURL}/${e.thumbnailUrl})`,
                     backgroundSize:'cover',
-                    backgroundPosition: 'center'
+                  on: 'center'
                 }}>
                 <section className={styles.sect}>
                     <h1 className={styles.title}>{course.name}</h1>
